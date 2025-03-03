@@ -226,3 +226,7 @@ body {
     align-items: center;
   }
 }
+
+#captcha-form {
+  display: none;
+}
