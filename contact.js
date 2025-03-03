@@ -8,5 +8,7 @@ document
   .getElementById("contact-link")
   .addEventListener("click", function (event) {
     event.preventDefault();
-    grecaptcha.execute();
+    grecaptcha.execute().catch(function (error) {
+      console.error("Error executing reCAPTCHA:", error);
+    });
   });
