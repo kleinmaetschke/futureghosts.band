@@ -1,6 +1,3 @@
-/* styles.css */
-
-/* BASIC RESET / GLOBAL */
 * {
   box-sizing: border-box;
   margin: 0; 
@@ -33,7 +30,6 @@ body {
   padding: 20px;
 }
 
-/* ALBUM SECTION */
 .album-section {
   display: grid;
   place-items: center;
@@ -48,6 +44,13 @@ body {
   place-items: end center;
 }
 
+@media (max-width: 768px) {
+  .album-wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+}
+
 .album-cover {
   grid-column: 1;
   grid-row: 1 / span 2;
@@ -57,6 +60,13 @@ body {
   margin: 0 auto;
   position: relative;
   z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .album-cover {
+    grid-column: 1;
+    grid-row: 1;
+  }
 }
 
 .album-wrapper::before {
@@ -73,6 +83,14 @@ body {
   opacity: 0.2;
 }
 
+@media (max-width: 768px) {
+  .album-wrapper::before {
+    bottom: unset;
+    top: 120px;
+    right: 4%;
+  }
+}
+
 .album-wrapper::after {
   content: '';
   position: absolute;
@@ -87,27 +105,30 @@ body {
   opacity: 0.2;
 }
 
+@media (max-width: 768px) {
+  .album-wrapper::after {
+    bottom: unset;
+    top: 120px;
+    left: 4%;
+  }
+}
+
 .vertical-text {
   grid-column: 2;
   grid-row: 1;
-  writing-mode: vertical-rl;   /* text flows top to bottom, right to left */
-  text-orientation: mixed;     /* keeps letters upright rather than rotated 90° each */
-  transform: rotate(180deg);   /* flip the text to be readable */
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
   margin-right: auto;
-  /* Make sure the parent grid/element allows the text to stretch: */
   height: 100%;
   display: grid;
   place-items: center start;
-  /* Then style as you wish */
   font-family: tgn-soft-round, sans-serif;
   font-size: 2.5rem;
   letter-spacing: 10px;
   text-transform: uppercase;
   opacity: 1;
-  color: #000; /* or something else */
-
-  /* ----- GRADIENT & CLIP TRICK ----- */
-  /* A multi-color linear gradient, sized larger than needed, so we can animate its position. */
+  color: #000;
   background: linear-gradient(
     282deg,
     #c9c9c9,
@@ -121,18 +142,25 @@ body {
     #c9c9c9
   );
   background-size: 400% 400%;
-
-  /* The magic: text only shows the background’s gradient. 
-     For Safari/Chrome, you still need -webkit prefixes. */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
-  /* Attach the animation (defined below). */
   animation: gradient-animate 8s ease-in-out infinite;
 }
 
-/* Keyframes to shift the background-position
-   so the gradient "scrolls" over the text. */
+@media (max-width: 768px) {
+  .vertical-text {
+    grid-column: 1;
+    grid-row: 2;
+    writing-mode: horizontal-tb;
+    transform: rotate(0deg);
+    font-size: 1.5rem;
+    letter-spacing: 5px;        
+    width: 100%;
+    text-align: center;
+    place-items: center;
+  }
+}
+
 @keyframes gradient-animate {
   0% {
     background-position: 0% 50%;
@@ -155,18 +183,29 @@ body {
   left: 4px;
 }
 
-  .social-link-fill {
-    fill: #e9e9e9;
-    transition: 0.3s fill ease-in;
+@media (max-width: 768px) {
+  .social-links {
+    grid-column: 1;
+    grid-row: 3;
+    justify-content: center;
+    grid-template-columns: auto auto;
   }
-    .social-link.instagram:hover .social-link-fill {
-      fill: #FF0069;
-      transition: 0.3s fill ease-out;
-    }
-    .social-link.youtube:hover .social-link-fill {
-      fill: #FF0000;
-      transition: 0.3s fill ease-out;
-    }
+}
+
+.social-link-fill {
+  fill: #e9e9e9;
+  transition: 0.3s fill ease-in;
+}
+
+.social-link.instagram:hover .social-link-fill {
+  fill: #FF0069;
+  transition: 0.3s fill ease-out;
+}
+
+.social-link.youtube:hover .social-link-fill {
+  fill: #FF0000;
+  transition: 0.3s fill ease-out;
+}
 
 .logo-section {
   grid-row: 2;
@@ -175,20 +214,20 @@ body {
 }
 
 .fg-logo {
-  width: 150px; /* Adjust as necessary */
+  width: 150px;
   margin-bottom: 10px;
 }
 
-  .fg-logo #Ghost {
-    animation: ghost-bob 4s ease-in-out infinite;
-  }
+.fg-logo #Ghost {
+  animation: ghost-bob 4s ease-in-out infinite;
+}
 
 @keyframes ghost-bob {
   0% {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-3px); /* Shift upward */
+    transform: translateY(-3px);
   }
   100% {
     transform: translateY(0);
@@ -202,7 +241,6 @@ body {
   grid-template-columns: repeat(2, auto);
 }
 
-/* Simple nav for About & Contact */
 .site-nav a {
   text-decoration: none;
   font-weight: 500;
@@ -219,7 +257,6 @@ body {
   transition: 0.1s border ease-out;
 }
 
-/* RESPONSIVE BREAKPOINT */
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
