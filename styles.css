@@ -86,7 +86,7 @@ body {
 @media (max-width: 768px) {
   .album-wrapper::before {
     bottom: unset;
-    top: 120px;
+    top: 90px;
     right: 4%;
   }
 }
@@ -108,7 +108,7 @@ body {
 @media (max-width: 768px) {
   .album-wrapper::after {
     bottom: unset;
-    top: 120px;
+    top: 90px;
     left: 4%;
   }
 }
@@ -149,6 +149,7 @@ body {
 
 @media (max-width: 768px) {
   .vertical-text {
+    margin-top: 30px;
     grid-column: 1;
     grid-row: 2;
     writing-mode: horizontal-tb;
