@@ -4,5 +4,7 @@ document.getElementById('contact-link').addEventListener('click', function(event
 });
 
 function onSubmit(token) {
-  window.location.href = 'mailto:heyfutureghosts@gmail.com';
+  var mailtoLink = document.createElement('a');
+  mailtoLink.href = 'mailto:heyfutureghosts@gmail.com';
+  mailtoLink.click();
 }

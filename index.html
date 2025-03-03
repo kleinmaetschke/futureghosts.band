@@ -73,17 +73,16 @@
       <nav class="site-nav">
         <a id="contact-link" href="#">Contact</a>
       </nav>
+      <form id="captcha-form" action="?" method="POST">
+        <button 
+          class="g-recaptcha" 
+          data-sitekey="6LcUgOgqAAAAAKRoAiQGaPOqPuY1bPQ46SlhF3Jv" 
+          data-callback='onSubmit' 
+          data-action='submit'>
+          Contact
+        </button>
+      </form>
     </div>
   </main>
-
-  <form id="captcha-form" action="?" method="POST">
-    <button 
-      class="g-recaptcha" 
-      data-sitekey="6LcUgOgqAAAAAKRoAiQGaPOqPuY1bPQ46SlhF3Jv" 
-      data-callback='onSubmit' 
-      data-action='submit'>
-      Contact
-    </button>
-  </form>
 </body>
 </html>
