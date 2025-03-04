@@ -14,18 +14,9 @@ body {
   font-family: tgn-soft-round-con, sans-serif;
   background-color: #fff;
   color: #000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  place-items: center;
 }
-
-  @media (max-height: 481px) {
-    body {
-      display: flex;
-      align-items: flex-start;
-    }
-  }
-
 .container {
   display: grid;
   align-items: center;
