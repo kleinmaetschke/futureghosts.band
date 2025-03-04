@@ -323,3 +323,20 @@ body {
 #captcha-form {
   display: none;
 }
+
+.grecaptcha-badge { visibility: hidden; }
+
+.disclaimer-text {
+  margin-top: 120px;
+  text-align: center;
+  color: #f9f9f9;
+}
+
+  .disclaimer-text .copyright {
+    color: #c9c9c9;
+  }
+
+  .disclaimer-text a {
+    color: #f9f9f9;
+    text-decoration: none;
+  }
