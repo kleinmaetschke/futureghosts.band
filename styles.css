@@ -19,6 +19,13 @@ body {
   align-items: center;
 }
 
+  @media (max-height: 481px) {
+    body {
+      display: flex;
+      align-items: flex-start;
+    }
+  }
+
 .container {
   display: grid;
   align-items: center;
