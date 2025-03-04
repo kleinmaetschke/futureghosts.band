@@ -35,6 +35,11 @@ body {
       grid-template-rows: auto auto;
     }
   }
+  @media (max-height: 481px) {
+    .container {
+      grid-template-rows: auto auto;
+    }
+  }
 
 .album-section {
   display: grid;
@@ -56,6 +61,13 @@ body {
     grid-template-rows: auto auto auto;
   }
 }
+
+  @media (max-width: 481px) {
+    .album-wrapper {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto auto;
+    }
+  }
 
 .album-cover {
   display: block;
@@ -81,6 +93,13 @@ body {
     }
   }
 
+  @media (max-height: 481px) {
+    .album-cover-wrap {
+      grid-column: 1;
+      grid-row: 1;
+    }
+  }
+
 .album-cover-wrap::before {
   content: '';
   position: absolute;
@@ -95,13 +114,21 @@ body {
   opacity: 0.2;
 }
 
-@media (max-width: 768px) {
-  .album-cover-wrap::before {
-    bottom: unset;
-    top: 45%;
-    right: 4%;
+  @media (max-width: 768px) {
+    .album-cover-wrap::before {
+      bottom: unset;
+      top: 45%;
+      right: 4%;
+    }
   }
-}
+
+  @media (max-height: 481px) {
+    .album-cover-wrap::before {
+      bottom: unset;
+      top: 45%;
+      right: 4%;
+    }
+  }
 
 .album-cover-wrap::after {
   content: '';
@@ -166,6 +193,21 @@ body {
   }
 }
 
+@media (max-height: 481px) {
+  .vertical-text {
+    margin-top: 30px;
+    grid-column: 1;
+    grid-row: 2;
+    writing-mode: horizontal-tb;
+    transform: rotate(0deg);
+    font-size: 1.5rem;
+    letter-spacing: 5px;        
+    width: 100%;
+    text-align: center;
+    place-items: center;
+  }
+}
+
 @keyframes gradient-animate {
   0% {
     background-position: 0% 50%;
@@ -188,14 +230,23 @@ body {
   left: 4px;
 }
 
-@media (max-width: 768px) {
-  .social-links {
-    grid-column: 1;
-    grid-row: 3;
-    justify-content: center;
-    grid-template-columns: auto auto;
+  @media (max-width: 768px) {
+    .social-links {
+      grid-column: 1;
+      grid-row: 3;
+      justify-content: center;
+      grid-template-columns: auto auto;
+    }
   }
-}
+
+  @media (max-height: 481px) {
+    .social-links {
+      grid-column: 1;
+      grid-row: 3;
+      justify-content: center;
+      grid-template-columns: auto auto;
+    }
+  }
 
 .social-link-fill {
   fill: #e9e9e9;
