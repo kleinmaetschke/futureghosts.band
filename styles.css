@@ -17,6 +17,7 @@ body {
   display: grid;
   place-items: center;
 }
+
 .container {
   display: grid;
   align-items: center;
