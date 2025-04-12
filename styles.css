@@ -43,6 +43,11 @@ body {
       grid-template-rows: auto auto;
     }
   }
+  @media (max-width: 481px) {
+    .container.about {
+      grid-template-rows: auto auto auto;
+    }
+  }
 
 .album-section {
   display: grid;
@@ -211,6 +216,12 @@ body {
     width: 100%;
     text-align: center;
     place-items: center;
+  }
+}
+
+@media (max-width: 481px) {
+  .container.about .vertical-text {
+    display: none;
   }
 }
 
