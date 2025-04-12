@@ -238,6 +238,9 @@ body {
     text-align: center;
     place-items: center;
   }
+  .container.about .vertical-text {
+    display: none;
+  }
 }
 
 @keyframes gradient-animate {
