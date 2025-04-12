@@ -1,0 +1,295 @@
+/* styles.css */
+
+/* BASIC RESET / GLOBAL */
+* {
+  box-sizing: border-box;
+  margin: 0; 
+  padding: 0;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  font-family: tgn-soft-round-con, sans-serif;
+  background-color: #fff;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 650px auto;
+  gap: 15px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ALBUM SECTION */
+.album-section {
+  display: grid;
+  place-items: center;
+}
+
+.album-wrapper {
+  position: relative;
+  display: grid;
+  grid-template-columns: 600px auto;
+  gap: 5px 15px;
+  grid-template-rows: repeat(2, auto);
+  place-items: center;
+}
+
+.album-cover {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  width: 100%;
+  max-width: 600px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.album-wrapper::before {
+  content: '';
+  position: absolute;
+  bottom: 30px;
+  right: 14%;
+  width: 70%;
+  height: 50%;
+  background: #000;
+  transform-origin: left;
+  transform: skewY(7.5deg);
+  filter: blur(15px);
+  opacity: 0.2;
+}
+
+.album-wrapper::after {
+  content: '';
+  position: absolute;
+  bottom: 30px;
+  left: 4%;
+  width: 70%;
+  height: 50%;
+  background: #000;
+  transform-origin: right;
+  transform: skewY(-7.5deg);
+  filter: blur(15px);
+  opacity: 0.2;
+}
+
+.vertical-text {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: end;
+  writing-mode: vertical-rl;   /* text flows top to bottom, right to left */
+  text-orientation: mixed;     /* keeps letters upright rather than rotated 90° each */
+  transform: rotate(180deg);   /* flip the text to be readable */
+  
+  /* Make sure the parent grid/element allows the text to stretch: */
+  height: 100%;
+  display: flex;
+  
+  /* Then style as you wish */
+  font-family: tgn-soft-round, sans-serif;
+  font-size: 2.5rem;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  opacity: 0.1;
+  color: #000; /* or something else */
+}
+
+.social-links {
+  grid-column: 2;
+  grid-row: 2;
+  display: grid;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+  .social-link-fill {
+    fill: #e9e9e9;
+  }
+    .social-link.instagram:hover .social-link-fill {
+      fill: #FF0069;
+    }
+    .social-link.tiktok:hover .social-link-fill {
+      fill: #000000;
+    }
+
+/* INFO SECTION */
+.info-section {
+  flex: 1;
+  padding: 20px;
+  display: grid;
+  place-items: center;
+}
+
+.album-title {
+  margin-bottom: 10px;
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #131618;
+  text-align: center;
+}
+
+.release-date {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #912613; /* Example color; match your design’s color scheme */
+  text-align: center;
+}
+
+.buttons {
+  margin-top: 45px;
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.btn {
+  font-weight: 400;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.btn.pre-save {
+  background-color: #eee;
+  color: #000;
+  letter-spacing: 2px;
+  padding: 8px 20px 10px 10px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  transform: scale(1);
+  transition: 0.1s color ease-in, 0.3s transform ease-in;
+}
+  .btn.pre-save.apple .music-icon-bg {
+    fill: #FA243C;
+    transition: 0.3s fill ease-in;
+  }
+  .btn.pre-save.apple .music-icon-fg {
+    fill: #fff;
+    transition: 0.3s fill ease-in;
+  }
+  .btn.pre-save.spotify .music-icon-bg {
+    fill: #1ED760;
+    transition: 0.3s fill ease-in;
+  }
+  .btn.pre-save.spotify .music-icon-fg {
+    fill: #fff;
+    transition: 0.3s fill ease-in;
+  }
+  .btn.pre-save:hover {
+    color: #fff;
+    transform: scale(1.1);
+    transition: 0.1s color ease-in, 0.3s transform ease-in;
+  }
+    .btn.pre-save.apple:hover {
+      background: #FA243C;
+    }
+      .btn.pre-save.apple:hover .music-icon-bg {
+        fill: #fff;
+        transition: 0.3s fill ease-out;
+      }
+      .btn.pre-save.apple:hover .music-icon-fg {
+        fill: #FA243C;
+        transition: 0.3s fill ease-out;
+      }
+    .btn.pre-save.spotify:hover {
+      background: #1ED760;
+    }
+      .btn.pre-save.spotify:hover .music-icon-bg {
+        fill: #fff;
+        transition: 0.3s fill ease-out;
+      }
+      .btn.pre-save.spotify:hover .music-icon-fg {
+        fill: #1ED760;
+        transition: 0.3s fill ease-out;
+      }
+      
+
+.logo-section {
+  display: grid;
+  place-items: center;
+}
+
+.fg-logo {
+  width: 150px; /* Adjust as necessary */
+  margin-bottom: 10px;
+}
+
+.below-release {
+  display: grid;
+  place-items: center;
+  gap: 100px;
+}
+
+.site-nav {
+  display: grid;
+  place-items: center;
+  gap: 20px;
+  grid-template-columns: repeat(2, auto);
+}
+
+/* Simple nav for About & Contact */
+.site-nav a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #000;
+  font-size: 1.2rem;
+  transition: 0.1s border ease-in;
+  padding-bottom: 3px;
+  border-bottom: 3px solid transparent;
+  text-transform: uppercase;
+}
+
+.site-nav a:hover {
+  border-bottom: 3px solid #e9e9e9;
+  transition: 0.1s border ease-out;
+}
+
+/* RESPONSIVE BREAKPOINT */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .album-section, .info-section {
+    flex: none;
+    width: 100%;
+    text-align: center;
+  }
+
+  .album-cover {
+    width: 60%;
+    max-width: 300px;
+  }
+
+  .vertical-text {
+    display: none; /* Could hide on smaller screens or reposition differently */
+  }
+
+  .info-section {
+    padding: 10px;
+    align-items: center;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
